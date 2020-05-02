@@ -4,7 +4,7 @@
   "main": "app/main.js",
   "scripts": {
     "watch": "shadow-cljs watch electron-app renderer",
-    "release": "shadow-cljs release electron-app renderer",
+    "build-dev": "shadow-cljs release electron-app renderer",
     "start": "electron ."
   },
   "dependencies": {

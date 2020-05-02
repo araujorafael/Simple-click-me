@@ -13,7 +13,7 @@ It's a basic click me app written in ClojureScript with reagent.
 $ yarn install
 ```
 
-4. After all dependencies are installed generates js files:
+4. After all dependencies are installed, compile js files:
 
 ```bash
 $ yarn build-dev

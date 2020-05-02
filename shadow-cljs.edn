@@ -1,0 +1,29 @@
+{:source-paths ["src" "test"]
+
+ :dependencies [[reagent "0.8.1" :exclusions [cljsjs/react cljsjs/react-dom]]]
+
+ :dev-http {8000 "public"}
+
+ :builds {:electron-app
+          {:target :node-script
+           :output-to "app/main.js"
+           :main tech.main/main
+           :devtools
+           {:before-load tech.main/stop
+            :after-load tech.main/start}}
+
+          :renderer
+          {:target :browser
+           :output-dir "app/js"
+           :asset-path "js"
+
+           :modules
+           {:renderer {:entries [tech.renderer]}}
+
+           :devtools
+           {:before-load tech.renderer/stop
+            :after-load tech.renderer/start
+            :tech {:target :browser
+                            :output-dir "public/js"
+                            :asset-path "js"
+                            :modules {:main {:init-fn tech.main/main}}}}}}}

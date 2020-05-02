@@ -38,3 +38,4 @@ resources/brepl_client.js
 .shadow-cljs
 app/**/*cljs*
 app/**/*js*
+yarn.lock
